@@ -5,7 +5,7 @@ void fullwrite(int testFlag) {
     char val[BUF_SIZE] = {0, };
     char buf[BUF_SIZE] = {0, };
     if (testFlag) {
-        strcpy(val, "0x12345678");
+        strcpy(val, "0xFFFFFFFF");
     }
     else {
         scanf("%s", val);

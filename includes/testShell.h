@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 #define BUF_SIZE 256
-#define CMD "testShell >> "
+#define CMD "Shell >> "
 #define ERR "INVALID COMMAND"
 
 // io.c

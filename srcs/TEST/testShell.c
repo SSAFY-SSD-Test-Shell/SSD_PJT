@@ -26,7 +26,7 @@ int main() {
 			printf("	write		write <hexa_value> to <LBA> \n");
             printf("	read		read <LBA>\n");
 			printf("	exit		terminate shell\n");
-			printf("	help        show all command and how to use\n");
+			printf("	help		show all command and how to use\n");
 			printf("	fullwrite	write <hexa_value> to all LBA\n");
 			printf("	fullread	show all values in LBA\n");
 			printf("	testapp1	operate commands that already saved\n");

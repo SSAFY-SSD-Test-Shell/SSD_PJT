@@ -5,7 +5,7 @@ void fullwrite(int testFlag) {
     char val[BUF_SIZE] = {0, };
     char buf[BUF_SIZE] = {0, };
     if (testFlag) {
-        strcpy(val, "0x12345678");
+        strcpy(val, "0xFFFFFFFF");
     }
     else {
         scanf("%s", val);
@@ -14,8 +14,8 @@ void fullwrite(int testFlag) {
             return ;
         }
     }
-    for(int i =0;i<100;i++){
-        sprintf(buf, "ssd W %d %s", i, val);
+    for(int i =0;i < 100;i++){
+        sprintf(buf, "./ssd W %d %s", i, val);
         // printf("write: %s\n", buf); 
         system(buf);
     }

@@ -1,4 +1,4 @@
-#include "../includes/testShell.h"
+#include "../../includes/testShell.h"
 #include <stdlib.h>
 #include <ctype.h>
 
@@ -46,7 +46,7 @@ void writeSSD(int flag, char* val) {
     if(flag){
         strcpy(tmp, val);
         for(int i = 0; i <= 5; i++) {
-            sprintf(buf, "./ssd W %d %s", i, tmp);
+            sprintf(buf, "ssd W %d %s", i, tmp);
             printf("write: %s\n", buf);
             system(buf);
         }
@@ -55,7 +55,7 @@ void writeSSD(int flag, char* val) {
         scanf("%s %s", idx, tmp);
         if(val_validCheck(tmp) && idx_validCheck(idx)){
             int id = atoi(idx);
-            sprintf(buf, "./ssd W %d %s", id, tmp);
+            sprintf(buf, "ssd W %d %s", id, tmp);
             printf("write: %s\n", buf); 
             system(buf);
         }
@@ -70,7 +70,7 @@ void readSSD(int flag) {
 
     if(flag){
         for(int i=0;i<=5;i++) {
-            sprintf(buf, "./ssd R %d", i);
+            sprintf(buf,"ssd R %d", i);
             printf("read: %s\n", buf);
             system(buf);
         }
@@ -79,7 +79,7 @@ void readSSD(int flag) {
         scanf("%s", idx);
         if(idx_validCheck(idx)){
             int id = atoi(idx);
-            sprintf(buf, "./ssd R %d", id);
+            sprintf(buf, "ssd R %d", id);
             printf("read: %s\n", buf);
             system(buf);
         }

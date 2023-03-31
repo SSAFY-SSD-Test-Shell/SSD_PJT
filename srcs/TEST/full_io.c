@@ -1,4 +1,4 @@
-#include "../includes/testShell.h"
+#include "../../includes/testShell.h"
 
 void fullwrite(int testFlag) {
     char tmp;
@@ -15,14 +15,14 @@ void fullwrite(int testFlag) {
         }
     }
     for(int i =0;i<100;i++){
-        sprintf(buf, "./ssd W %d %s", i, val);
+        sprintf(buf, "ssd W %d %s", i, val);
         printf("write: %s\n", buf); 
         system(buf);
     }
 }
 
 void fullread() {
-    FILE* fp = fopen("./nand.txt", "r");
+    FILE* fp = fopen("nand.txt", "r");
     for(int i=0;i<100;i++){
         char buf[BUF_SIZE] = { 0, };
         fgets(buf, 1000, fp);

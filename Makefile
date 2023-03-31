@@ -10,7 +10,8 @@ T_OBJS=$(T_SRCS:.c=.o)
 %.o:%.c
 	$(CC) -I$(INC) -c $^ -o $@
 
-all: $(SSD) $(TEST)
+all: $(TEST)
+# all: $(SSD) $(TEST)
 
 $(SSD): $(S_OBJS)
 	$(CC) -I$(INC) -o $(SSD) $(S_OBJS)

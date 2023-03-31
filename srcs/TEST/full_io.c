@@ -1,18 +1,23 @@
 #include "../includes/testShell.h"
 
-void fullwrite() {
+void fullwrite(int testFlag) {
+    char tmp;
     char val[BUF_SIZE] = {0, };
     char buf[BUF_SIZE] = {0, };
-    scanf("%s", val);
-    if(val_validCheck(val)){
-        for(int i =0;i<100;i++){
-            sprintf(buf, "./ssd W %d %s", i, val);
-            printf("write: %s\n", buf); 
-            // system(buf);
+    if (testFlag) {
+        strcpy(val, "0x12345678");
+    }
+    else {
+        scanf("%s", val);
+        if (!val_validCheck(val)) {
+            printf("%s", ERR);
+            return ;
         }
     }
-    else{
-        printf("%s", ERR);
+    for(int i =0;i<100;i++){
+        sprintf(buf, "./ssd W %d %s", i, val);
+        printf("write: %s\n", buf); 
+        system(buf);
     }
 }
 

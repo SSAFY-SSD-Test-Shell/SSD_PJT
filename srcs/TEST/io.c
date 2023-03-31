@@ -39,30 +39,51 @@ bool val_validCheck(char* val) {
 }
 
 // nand.txt에 
-void writeSSD() {
+void writeSSD(int flag, char* val) {
     char idx[BUF_SIZE] = {0, };
     char tmp[BUF_SIZE] = {0, };
 	char buf[BUF_SIZE] = {0, };
-    
-    scanf("%s %s", idx, tmp);
-    if(val_validCheck(tmp) && idx_validCheck(idx)){
-        int id = atoi(idx);
-        sprintf(buf, "./ssd W %d %s", id, tmp);
-        printf("write: %s\n", buf); // system(buf);
+    if(flag){
+        strcpy(tmp, val);
+        for(int i = 0; i <= 5; i++) {
+            sprintf(buf, "./ssd W %d %s", i, tmp);
+            printf("write: %s\n", buf);
+            system(buf);
+        }
     }
-	else
-		printf("%s\n", ERR);
+    else{
+        scanf("%s %s", idx, tmp);
+        if(val_validCheck(tmp) && idx_validCheck(idx)){
+            int id = atoi(idx);
+            sprintf(buf, "./ssd W %d %s", id, tmp);
+            printf("write: %s\n", buf); 
+            system(buf);
+        }
+        else
+            printf("%s\n", ERR);
+    }
 }
 
-void readSSD() {
+void readSSD(int flag) {
     char idx[BUF_SIZE] = {0, };
 	char buf[BUF_SIZE] = {0, };
-    scanf("%s", idx);
-	if(idx_validCheck(idx)){
-        int id = atoi(idx);
-        sprintf(buf, "./ssd R %d", id);
-        printf("read: %s\n", buf);// system(buf);
+
+    if(flag){
+        for(int i=0;i<=5;i++) {
+            sprintf(buf, "./ssd R %d", i);
+            printf("read: %s\n", buf);
+            system(buf);
+        }
     }
-	else
-		printf("%s\n", ERR);
+    else{
+        scanf("%s", idx);
+        if(idx_validCheck(idx)){
+            int id = atoi(idx);
+            sprintf(buf, "./ssd R %d", id);
+            printf("read: %s\n", buf);
+            system(buf);
+        }
+        else
+            printf("%s\n", ERR);
+    }
 }

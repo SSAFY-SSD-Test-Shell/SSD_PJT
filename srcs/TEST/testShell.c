@@ -4,17 +4,17 @@
 int main() {
     while (1)
     {
-        char qry[256];
+        char qry[256] = {0,};
         printf("%s", CMD);
         scanf("%s", qry);
         
         // write
         if(!strcmp(qry, "write")){
-            writeSSD();
+            writeSSD(0, 0);
         }
         // read
         else if(!strcmp(qry, "read")){
-            readSSD();
+            readSSD(0);
         }
         // exit -> shell 종료
         else if(!strcmp(qry, "exit")){
@@ -34,11 +34,18 @@ int main() {
         }
         // fullwrite -> 전체 LBA에 값 입력
         else if(!strcmp(qry, "fullwrite")){
-            fullread();
+            fullwrite(0);
         }
         // fullread -> 전체 값 출력
         else if(!strcmp(qry, "fullread")){
-            fullwrite();
+            fullread();
+            
+        }
+        else if(!strcmp(qry, "testapp1")){
+            testapp1();
+        }
+        else if(!strcmp(qry, "testapp2")) {
+            testapp2();
         }
         // 잘못된 명령어
         else{

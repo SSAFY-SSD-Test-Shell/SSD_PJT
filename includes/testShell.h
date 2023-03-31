@@ -12,11 +12,11 @@
 // io.c
 bool idx_validCheck(char* idx);
 bool val_validCheck(char* val);
-void writeSSD();
-void readSSD();
+void writeSSD(int flag, char* val);
+void readSSD(int flag);
 
 // full_io.c
-void fullwrite();
+void fullwrite(int testFlag);
 void fullread();
 
 // test.c

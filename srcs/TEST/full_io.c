@@ -3,13 +3,16 @@
 void fullwrite() {
     char val[BUF_SIZE] = {0, };
     char buf[BUF_SIZE] = {0, };
-    scnaf("%s", val);
+    scanf("%s", val);
     if(val_validCheck(val)){
         for(int i =0;i<100;i++){
             sprintf(buf, "./ssd W %d %s", i, val);
             printf("write: %s\n", buf); 
             // system(buf);
         }
+    }
+    else{
+        printf("%s", ERR);
     }
 }
 

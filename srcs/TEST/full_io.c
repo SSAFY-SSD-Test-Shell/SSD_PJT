@@ -16,7 +16,7 @@ void fullwrite(int testFlag) {
     }
     for(int i =0;i<100;i++){
         sprintf(buf, "ssd W %d %s", i, val);
-        printf("write: %s\n", buf); 
+        // printf("write: %s\n", buf); 
         system(buf);
     }
 }

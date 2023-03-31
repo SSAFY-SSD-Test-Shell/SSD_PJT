@@ -47,7 +47,7 @@ void writeSSD(int flag, char* val) {
         strcpy(tmp, val);
         for(int i = 0; i <= 5; i++) {
             sprintf(buf, "ssd W %d %s", i, tmp);
-            printf("write: %s\n", buf);
+            // printf("write: %s\n", buf);
             system(buf);
         }
     }
@@ -56,7 +56,7 @@ void writeSSD(int flag, char* val) {
         if(val_validCheck(tmp) && idx_validCheck(idx)){
             int id = atoi(idx);
             sprintf(buf, "ssd W %d %s", id, tmp);
-            printf("write: %s\n", buf); 
+            // printf("write: %s\n", buf); 
             system(buf);
         }
         else
@@ -71,7 +71,7 @@ void readSSD(int flag) {
     if(flag){
         for(int i=0;i<=5;i++) {
             sprintf(buf,"ssd R %d", i);
-            printf("read: %s\n", buf);
+            // printf("read: %s\n", buf);
             system(buf);
         }
     }
@@ -80,7 +80,7 @@ void readSSD(int flag) {
         if(idx_validCheck(idx)){
             int id = atoi(idx);
             sprintf(buf, "ssd R %d", id);
-            printf("read: %s\n", buf);
+            // printf("read: %s\n", buf);
             system(buf);
         }
         else
